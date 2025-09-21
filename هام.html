@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تسجيل الدخول والتسجيل</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h2 id="form-title">تسجيل الدخول</h2>
+      <form id="login-form">
+        <input type="text" placeholder="اسم المستخدم" required>
+        <input type="password" placeholder="كلمة المرور" required>
+        <button type="submit">دخول</button>
+        <p>ليس لديك حساب؟ <span onclick="toggleForm()">سجّل الآن</span></p>
+      </form>
+
+      <form id="register-form" style="display: none;">
+        <input type="text" placeholder="اسم المستخدم" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="password" placeholder="كلمة المرور" required>
+        <button type="submit">تسجيل</button>
+        <p>لديك حساب؟ <span onclick="toggleForm()">سجّل الدخول</span></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #00b4db, #0083b0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 300px;
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #0083b0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+span {
+  color: #0083b0;
+  cursor: pointer;
+}
+
+// script.js
+function toggleForm() {
+  const loginForm = document.getElementById("login-form");
+  const registerForm = document.getElementById("register-form");
+  const title = document.getElementById("form-title");
+
+  if (loginForm.style.display === "none") {
+    loginForm.style.display = "flex";
+    registerForm.style.display = "none";
+    title.textContent = "تسجيل الدخول";
+  } else {
+    loginForm.style.display = "none";
+    registerForm.style.display = "flex";
+    title.textContent = "التسجيل";
+  }
+}
+
+....................................................................
+// script.js
+function showLogin() {
+document.getElementById("login").style.display = "flex";
+document.getElementById("register").style.display = "none";
+}
+
+function showRegister() {
+document.getElementById("login").style.display = "none";
+document.getElementById("register").style.display = "flex";
+}
+
+
+/* style.css */
+body {
+font-family: sans-serif;
+background: #00b4db;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.container {
+background: white;
+padding: 30px;
+border-radius: 10px;
+width: 300px;
+box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.button-box {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+button {
+padding: 10px;
+width: 48%;
+background-color: #0083b0;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.form {
+display: flex;
+flex-direction: column;
+}
+
+input {
+margin: 10px 0;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+......................................................<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل الدخول / التسجيل</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <div class="button-box">
+                <button onclick="showLogin()">تسجيل الدخول</button>
+                <button onclick="showRegister()">التسجيل</button>
+            </div>
+
+            <form id="login" class="form">
+                <input type="text" placeholder="اسم المستخدم" required>
+                <input type="password" placeholder="كلمة المرور" required>
+                <button type="submit">دخول</button>
+            </form>
+
+            <form id="register" class="form" style="display:none;">
+                <input type="text" placeholder="اسم المستخدم" required>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <input type="password" placeholder="كلمة المرور" required>
+                <button type="submit">تسجيل</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
